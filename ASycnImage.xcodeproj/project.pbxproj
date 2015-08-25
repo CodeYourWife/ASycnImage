@@ -13,6 +13,9 @@
 		A0DDF84D1B84C07300C3FD30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0DDF84B1B84C07300C3FD30 /* Main.storyboard */; };
 		A0DDF84F1B84C07300C3FD30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0DDF84E1B84C07300C3FD30 /* Assets.xcassets */; };
 		A0DDF8521B84C07300C3FD30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0DDF8501B84C07300C3FD30 /* LaunchScreen.storyboard */; };
+		A0DDF85C1B84C15300C3FD30 /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0DDF85B1B84C15300C3FD30 /* ImageCell.xib */; };
+		A0DDF85F1B84C1C400C3FD30 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0DDF85E1B84C1C400C3FD30 /* ImageCell.m */; };
+		A0DDF8611B84C2C700C3FD30 /* default.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A0DDF8601B84C2C700C3FD30 /* default.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,10 @@
 		A0DDF84E1B84C07300C3FD30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0DDF8511B84C07300C3FD30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A0DDF8531B84C07300C3FD30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0DDF85B1B84C15300C3FD30 /* ImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
+		A0DDF85D1B84C1C400C3FD30 /* ImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCell.h; sourceTree = "<group>"; };
+		A0DDF85E1B84C1C400C3FD30 /* ImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCell.m; sourceTree = "<group>"; };
+		A0DDF8601B84C2C700C3FD30 /* default.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +65,7 @@
 		A0DDF8411B84C07300C3FD30 /* ASycnImage */ = {
 			isa = PBXGroup;
 			children = (
+				A0DDF8601B84C2C700C3FD30 /* default.jpg */,
 				A0DDF8451B84C07300C3FD30 /* AppDelegate.h */,
 				A0DDF8461B84C07300C3FD30 /* AppDelegate.m */,
 				A0DDF8481B84C07300C3FD30 /* ViewController.h */,
@@ -67,6 +75,9 @@
 				A0DDF8501B84C07300C3FD30 /* LaunchScreen.storyboard */,
 				A0DDF8531B84C07300C3FD30 /* Info.plist */,
 				A0DDF8421B84C07300C3FD30 /* Supporting Files */,
+				A0DDF85B1B84C15300C3FD30 /* ImageCell.xib */,
+				A0DDF85D1B84C1C400C3FD30 /* ImageCell.h */,
+				A0DDF85E1B84C1C400C3FD30 /* ImageCell.m */,
 			);
 			path = ASycnImage;
 			sourceTree = "<group>";
@@ -110,6 +121,7 @@
 				TargetAttributes = {
 					A0DDF83E1B84C07300C3FD30 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 4P6XTQVRFY;
 					};
 				};
 			};
@@ -137,8 +149,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0DDF8521B84C07300C3FD30 /* LaunchScreen.storyboard in Resources */,
+				A0DDF85C1B84C15300C3FD30 /* ImageCell.xib in Resources */,
 				A0DDF84F1B84C07300C3FD30 /* Assets.xcassets in Resources */,
 				A0DDF84D1B84C07300C3FD30 /* Main.storyboard in Resources */,
+				A0DDF8611B84C2C700C3FD30 /* default.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0DDF84A1B84C07300C3FD30 /* ViewController.m in Sources */,
+				A0DDF85F1B84C1C400C3FD30 /* ImageCell.m in Sources */,
 				A0DDF8471B84C07300C3FD30 /* AppDelegate.m in Sources */,
 				A0DDF8441B84C07300C3FD30 /* main.m in Sources */,
 			);
@@ -263,6 +278,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: 624686876@qq.com (Z4L9986BFL)";
 				INFOPLIST_FILE = ASycnImage/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.YourFather.ASycnImage;
@@ -274,6 +290,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: 624686876@qq.com (Z4L9986BFL)";
 				INFOPLIST_FILE = ASycnImage/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.YourFather.ASycnImage;
@@ -300,6 +317,7 @@
 				A0DDF8581B84C07300C3FD30 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
