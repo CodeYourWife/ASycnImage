@@ -10,4 +10,5 @@
 
 @interface ImageCell : UITableViewCell
 @property (nonatomic,strong)NSString* ImageUrl;
+- (void)loadImage:(NSString*)url;
 @end

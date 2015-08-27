@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8121.17" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
@@ -14,15 +14,17 @@
                 <rect key="frame" x="0.0" y="0.0" width="396" height="219"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="O9m-6j-CTV">
-                        <rect key="frame" x="8" y="8" width="380" height="203"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="O9m-6j-CTV" customClass="RoundImageView">
+                        <rect key="frame" x="58" y="58" width="64" height="64"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="64" id="mHJ-wk-en8"/>
+                            <constraint firstAttribute="height" constant="64" id="q6x-Lq-Fgk"/>
+                        </constraints>
                     </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="O9m-6j-CTV" firstAttribute="leading" secondItem="IZe-dy-xuI" secondAttribute="leadingMargin" id="Jui-Va-s8u"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="O9m-6j-CTV" secondAttribute="bottom" id="aSK-Rx-8fF"/>
-                    <constraint firstItem="O9m-6j-CTV" firstAttribute="top" secondItem="IZe-dy-xuI" secondAttribute="topMargin" id="hWx-O8-ypt"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="O9m-6j-CTV" secondAttribute="trailing" id="lgS-C9-8RV"/>
+                    <constraint firstItem="O9m-6j-CTV" firstAttribute="leading" secondItem="IZe-dy-xuI" secondAttribute="leadingMargin" constant="50" id="7io-H9-LCO"/>
+                    <constraint firstItem="O9m-6j-CTV" firstAttribute="top" secondItem="IZe-dy-xuI" secondAttribute="topMargin" constant="50" id="8lN-LM-P8m"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

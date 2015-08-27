@@ -20,14 +20,14 @@
     [super viewDidLoad];
     
     self.urlArray = @[
-                      @"http://www.doubean.com/face/store/face/0000000010/make.jpg",
-                      @"http://www.doubean.com/face/store/face/0000000011/make.jpg",
-                      @"http://www.doubean.com/face/store/face/0000000012/make.jpg",
-                      @"http://www.doubean.com/face/store/face/0000000013/make.jpg",
-                      @"http://www.doubean.com/face/store/face/0000000014/make.jpg",
-                      @"http://www.doubean.com/face/store/face/0000000015/make.jpg",
-                      @"http://www.doubean.com/face/store/face/0000000016/make.jpg",
-                      @"http://www.doubean.com/face/store/face/0000000017/make.jpg"
+                      @"http://pic74.nipic.com/file/20150812/10570451_125051067000_2.jpg",
+                      @"http://pic74.nipic.com/file/20150803/19780287_133254170000_2.jpg",
+                      @"http://pic72.nipic.com/file/20150714/20189787_173803509000_2.jpg",
+                      @"http://f1.topitme.com/1/76/77/1135354797d3f77761o.jpg",
+                      @"http://f10.topitme.com/o/201102/09/12972145895656.jpg",
+                      @"http://f10.topitme.com/o/201007/29/12803354165011.jpg",
+                      @"http://pic.nipic.com/2008-05-07/20085722191339_2.jpg",
+                      @"http://fb.topitme.com/b/8b/4f/11978218352664f8bbo.jpg"
                       ];
 }
 
@@ -53,12 +53,13 @@
     ImageCell* pCell = [tableView dequeueReusableCellWithIdentifier:identy];
     if(!pCell)
         pCell = [[[NSBundle mainBundle] loadNibNamed:@"ImageCell" owner:self options:nil] lastObject];
+    else
+        pCell.imageView.image = nil;
     
-    pCell.ImageUrl = [self.urlArray objectAtIndex:[indexPath row]];
+    [pCell loadImage:[self.urlArray objectAtIndex:[indexPath row]]];
     
     return pCell;
 }
-
 
 
 @end

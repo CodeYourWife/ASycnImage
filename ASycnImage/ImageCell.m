@@ -6,10 +6,46 @@
 //  Copyright © 2015年 YourFather. All rights reserved.
 //
 
+
+
 #import "ImageCell.h"
 
+@interface RoundImageView : UIImageView
+
+@end
+
+@implementation RoundImageView
+
+//- (void)willMoveToWindow:(UIWindow *)newWindow
+//{
+    //直接设置
+//    CALayer* roundedLayer = self.layer;
+//    [roundedLayer setMasksToBounds:YES];
+//    roundedLayer.cornerRadius = 32;
+//    roundedLayer.borderColor = [[UIColor grayColor] CGColor];
+    
+    //添加一个遮罩层
+//    CAShapeLayer *styleLayer = [CAShapeLayer layer];
+//    UIBezierPath *shadowPath = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, 64, 64) byRoundingCorners:(UIRectCornerTopLeft|UIRectCornerTopRight) cornerRadii:CGSizeMake(32, 32)];
+//    styleLayer.path = shadowPath.CGPath;
+//    self.layer.mask = styleLayer;
+//}
+-(void)drawRect:(CGRect)rect
+{
+    CGRect bounds = self.bounds;
+    
+    [[UIColor whiteColor] set];
+    UIRectFill(bounds);
+    
+    [[UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, 64, 64) cornerRadius:32] addClip];
+    
+    [self.image drawInRect:bounds];
+}
+@end
+
+
 @interface ImageCell()<NSURLConnectionDataDelegate>
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet RoundImageView *imageView;
 @property (assign,nonatomic)long long fileLength;
 @property (strong,nonatomic)NSMutableData *data;
 @end
@@ -28,17 +64,19 @@
 - (void)awakeFromNib {
     
     self.data = [NSMutableData dataWithCapacity:0];
-    self.imageView.image = [UIImage imageNamed:@"default.jpg"];
-    
-    [self loadImage:self.ImageUrl];
 }
 
 - (void)loadImage:(NSString*)url
 {
+    
+    self.imageView.image = [UIImage imageNamed:@"AY_48.png"];
+    self.imageView.contentMode = UIViewContentModeRedraw;
+    
     NSURL *URL = [NSURL URLWithString:url];
-    NSURLRequest* req = [NSURLRequest requestWithURL:URL];
+    NSURLRequest* req = [NSURLRequest requestWithURL:URL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60];
     
     NSURLConnection *con = [[NSURLConnection alloc] initWithRequest:req delegate:self];
+
     [con start];
 }
 
@@ -60,7 +98,8 @@
 }
 - (void)updateImageView
 {
-    UIImage *image = [UIImage imageWithData:self.data];
+//    UIImage *image = [UIImage imageWithData:self.data];
+    UIImage* image = [UIImage imageNamed:@"AY_48.png"];
     self.imageView.image = image;
 }
 
